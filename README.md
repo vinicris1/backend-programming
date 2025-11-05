@@ -3,9 +3,9 @@ Repository created for the project related to the backend programming material
 
 This is the backend server of the project
 
-Next steps:
--> Create a frontend to communicate with the API created in this repository
--> Upload this to a AWS EC2 instance and connect in this API via a local network, with this the database will be centralized and could be acessed from any computer any time
+Next steps: <br />
+-> Create a frontend to communicate with the API created in this repository <br />
+-> Upload this to a AWS EC2 instance and connect in this API via a local network, with this the database will be centralized and could be acessed from any computer any time <br />
 
 Components paths and their utilities:
 ```
