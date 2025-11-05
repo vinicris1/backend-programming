@@ -2,6 +2,8 @@
 Repository created for the project related to the backend programming material
 
 This is the backend server of the project
+Group: Equipe 4
+Participants: FELIPE GONÇALVES, CARLOS VINICIUS CRISTOFOLINI, GABRIEL BRAGATO ALBANAZ
 
 Next steps: <br />
 -> Create a frontend to communicate with the API created in this repository <br />
@@ -16,5 +18,5 @@ Components paths and their utilities:
 ./index.js - Server inicializations
 ./routes.js - Mapping from API calls to SQL functions in the database
 ```
-In this video could be checked the API responses testing this code in a Windows environment:
-[VIDEO]
+In this video could be checked the API responses testing this code in a Windows environment: <br />
+[![Veja a Demonstração Completa no YouTube](https://img.youtube.com/vi/LpwiVczVC9c&/maxresdefault.jpg)](https://www.youtube.com/watch?v=LpwiVczVC9c&)
