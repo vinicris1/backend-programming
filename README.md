@@ -1,13 +1,16 @@
 # backend-programming
-Repository created for the project related to the backend programming material
+This repository was created for a project related to backend programming.
 
+### About
 This is the backend server of the project
+Objective: The objective of this project is to create a To-Do list that has a hosted server and can be accessed from **anywhere**. The initial **expected usage** is to centralize **co-workers'** To-Do lists, but it can be improved to a To-Do list **separated** by user (this is outside of the current project scope, for now! :D)
 Group: Equipe 4
 Participants: FELIPE GONÇALVES, CARLOS VINICIUS CRISTOFOLINI, GABRIEL BRAGATO ALBANAZ
 
-Next steps: <br />
--> Create a frontend to communicate with the API created in this repository <br />
--> Upload this to a AWS EC2 instance and connect in this API via a local network, with this the database will be centralized and could be acessed from any computer any time <br />
+### Next Steps
+* Execute some tests in this server infrastructure and adjust the code.
+* Create a frontend to communicate with the API created in this repository.
+* Upload this to an AWS EC2 instance and connect to this API via a local network. With this, the database will be centralized and could be accessed from any computer anytime
 
 Components paths and their utilities:
 ```
