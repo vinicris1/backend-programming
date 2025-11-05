@@ -5,9 +5,10 @@ This repository was created for a project related to backend programming.
 This is the backend server of the project<br />
 **Objective:** <br />
 The objective of this project is to create a To-Do list that has a hosted server and can be accessed from anywhere. The initial expected usage is to centralize co-workers To-Do lists, but it can be improved to a To-Do list separated by user (this is outside of the current project scope, for now! :D)<br />
-**Group:** <br />
-Equipe 4<br />
-**Participants:**<br /> FELIPE GONÇALVES, CARLOS VINICIUS CRISTOFOLINI, GABRIEL BRAGATO ALBANAZ<br />
+
+**Group:** Equipe 4<br />
+
+**Participants:** FELIPE GONÇALVES, CARLOS VINICIUS CRISTOFOLINI, GABRIEL BRAGATO ALBANAZ<br />
 
 ### Next Steps
 * Execute some tests in this server infrastructure and adjust the code.
