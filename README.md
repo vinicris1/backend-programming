@@ -18,5 +18,4 @@ Components paths and their utilities:
 ./index.js - Server inicializations
 ./routes.js - Mapping from API calls to SQL functions in the database
 ```
-In this video could be checked the API responses testing this code in a Windows environment: <br />
-[![Veja a Demonstração Completa no YouTube](https://img.youtube.com/vi/LpwiVczVC9c&/maxresdefault.jpg)](https://www.youtube.com/watch?v=LpwiVczVC9c&)
+In this [![video](https://img.youtube.com/vi/LpwiVczVC9c&/maxresdefault.jpg)](https://www.youtube.com/watch?v=LpwiVczVC9c&) could be checked the API responses testing this code in a Windows environment: <br />
