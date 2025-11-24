@@ -21,24 +21,24 @@ function ListarTask(id, callback) {
 
 // Create function
 function Inserir(body, FunctionCallback){
-    db.all('insert into tarefas(descricao, concluido) values(?, ?) returning id_tarefa', 
-        [body.descricao, body.concluido], function(err, rows){
-        FunctionCallback(err,rows);
+    db.all('insert into tarefas(descricao, concluido) values(?, ?) returning *', 
+        [body.descricao, body.concluido], function(err, row){
+        FunctionCallback(err,row);
     })
 }
 
 // Update function
 function Editar(id_tarefa, body, FunctionCallback){
-    db.all('update tarefas set descricao=?, concluido=? where id_tarefa=? returning id_tarefa',
-        [body.descricao, body.concluido, id_tarefa], function (err, rows) {
-        FunctionCallback(err, rows);
+    db.get('update tarefas set descricao=?, concluido=? where id_tarefa=? returning *',
+        [body.descricao, body.concluido, id_tarefa], function (err, row) {
+        FunctionCallback(err, row);
     })
 }
 
 // Delete function
 function Excluir(id_tarefa, FunctionCallback){
-    db.all('delete from tarefas where id_tarefa=? returning id_tarefa', [id_tarefa], function (err, rows) {
-            FunctionCallback(err, rows);
+    db.get('delete from tarefas where id_tarefa=? returning *', [id_tarefa], function (err, row) {
+            FunctionCallback(err, row);
         })
 }
 
