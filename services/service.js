@@ -11,6 +11,14 @@ function Listar(FunctionCallback){
     })
 }
 
+function ListarTask(id, callback) {
+    const sql = "SELECT * FROM tarefas WHERE id_tarefa = ?";
+
+    db.get(sql, [id], function (err, row) {
+        callback(err, row);
+    });
+}
+
 // Create function
 function Inserir(body, FunctionCallback){
     db.all('insert into tarefas(descricao, concluido) values(?, ?) returning id_tarefa', 
@@ -35,4 +43,4 @@ function Excluir(id_tarefa, FunctionCallback){
 }
 
 // Export all the functions to be used in 
-export default {Listar, Inserir, Editar, Excluir};
+export default {Listar, Inserir, Editar, Excluir, ListarTask};

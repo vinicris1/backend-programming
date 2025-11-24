@@ -15,4 +15,6 @@ routes.put("/tarefas/:id_tarefa", controllersTarefa.Editar);
 
 routes.delete("/tarefas/:id_tarefa", controllersTarefa.Excluir);
 
+routes.get("/tarefas/:id", controllersTarefa.ListarTask);
+
 export default routes;

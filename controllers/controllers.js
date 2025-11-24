@@ -11,6 +11,22 @@ function Listar(req, res){
     });
 }
 
+function ListarTask(req, res) {
+    const { id } = req.params;
+
+    serviceTarefa.ListarTask(id, function(err, row) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+
+        if (!row) {
+            return res.status(404).json({ error: "Tarefa não encontrada" });
+        }
+
+        res.status(200).json(row);
+    });
+}
+
 // Execute the create with the parameters use in the POST
 function Inserir(req, res) {
     serviceTarefa.Inserir(req.body, function (err, result) {
@@ -46,4 +62,4 @@ function Excluir(req, res) {
 
 
 // Export to be used when imported in
-export default {Listar, Inserir, Editar, Excluir};
+export default {Listar, Inserir, Editar, Excluir, ListarTask};
