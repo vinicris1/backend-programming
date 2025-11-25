@@ -3,18 +3,29 @@ import controllersTarefa from "./controllers/controllers.js";
 
 const routes = Router();
 
-// This will create routes from our database to response the API requests
+/**
+ * Rotas relacionadas às tarefas.
+ * Cada rota chama um método correspondente no controller.
+ */
 
-//Ex: if the api request a get this will execute the first line, which will list all files inside the DB
+// Lista todas as tarefas
+// GET /tarefas
+routes.get("/tarefas", controllersTarefa.listar);
 
-routes.get("/tarefas", controllersTarefa.Listar);
+// Cria uma nova tarefa
+// POST /tarefas
+routes.post("/tarefas", controllersTarefa.inserir);
 
-routes.post("/tarefas", controllersTarefa.Inserir);
+// Atualiza uma tarefa existente
+// PUT /tarefas/:id
+routes.put("/tarefas/:id", controllersTarefa.editar);
 
-routes.put("/tarefas/:id_tarefa", controllersTarefa.Editar);
+// Remove uma tarefa
+// DELETE /tarefas/:id
+routes.delete("/tarefas/:id", controllersTarefa.excluir);
 
-routes.delete("/tarefas/:id_tarefa", controllersTarefa.Excluir);
-
-routes.get("/tarefas/:id", controllersTarefa.ListarTask);
+// Lista uma tarefa específica pelo ID
+// GET /tarefas/:id
+routes.get("/tarefas/:id", controllersTarefa.listarTask);
 
 export default routes;

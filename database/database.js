@@ -1,6 +1,9 @@
 import sqlite3 from "sqlite3";
 
-// Variable which will be used to create the DB structure if not already created.
+/**
+ * Script SQL para criação da tabela de tarefas.
+ * Executado apenas se a tabela ainda não existir.
+ */
 const CREATE_TABLES_SQL = `
   CREATE TABLE IF NOT EXISTS tarefas (
     id_tarefa INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -9,31 +12,39 @@ const CREATE_TABLES_SQL = `
   );
 `;
 
-const SQLite3 = sqlite3.verbose();   //verbose fornece mais detalhes no console sobre as operações
+// Ativa logs detalhados do SQLite (útil para debug)
+const SQLite3 = sqlite3.verbose();
 
-// Lets create a function to open the DB connection | if the DB isn't created yet, this will create this :D
+/**
+ * Inicializa a conexão com o banco de dados.
+ * Caso o arquivo 'banco.db' não exista, ele é criado automaticamente.
+ * Em seguida, cria a estrutura inicial do banco (CREATE TABLE).
+ *
+ * @returns {sqlite3.Database} Instância do banco de dados SQLite.
+ */
 function initializeDatabase() {
-    // Create the DB if isn't exist yet
-    const db = new SQLite3.Database('banco.db', SQLite3.OPEN_CREATE | SQLite3.OPEN_READWRITE, function(err) {
-        if (err) {
-            return console.log(`Database open error: ${err.message}`); // for some reason if can't open the connection we will know
-        }
-        console.log('Database connection open');
-
-        
-        db.exec(CREATE_TABLES_SQL, function(err) {
+    const db = new SQLite3.Database(
+        "banco.db",
+        SQLite3.OPEN_CREATE | SQLite3.OPEN_READWRITE,
+        (err) => {
             if (err) {
-                return console.error(`Failed to create the database structure: ${err.message}`);
+                return console.error(`Erro ao abrir o banco: ${err.message}`);
             }
-            console.log('Database structure created');
-        });
-    });
+
+            console.log("Conexão com o banco de dados aberta.");
+
+            // Criação das tabelas
+            db.exec(CREATE_TABLES_SQL, (err) => {
+                if (err) {
+                    return console.error(`Erro ao criar estrutura do banco: ${err.message}`);
+                }
+                console.log("Estrutura do banco de dados verificada/criada.");
+            });
+        }
+    );
 
     return db;
 }
 
-
-const db = initializeDatabase();
-
-// Export the database connection
-export { db };
+// Inicializa e exporta a instância do banco
+export const db = initializeDatabase();
